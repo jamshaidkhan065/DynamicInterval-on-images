@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{ 
+  background: repeating-linear-gradient(
+    red,
+    #ff00bf,
+    #c300ff,
+    #1100ff,
+    #00d9ff,
+    #1bffe4,
+    #00ff04,
+    #7be600,
+    #ffea00,
+    #ff7300,
+    red
+  );
+  background-size: cover;
+  height: 100vh;
+}
+
+
+.nav-links{
+  gap: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #ffc9c96b;
+  padding: 12px 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.nav-links li{
+  list-style: none;
+  margin: 0 12px;
+}
+.nav-links li a{
+  
+  text-decoration: none;
+  text-wrap: nowrap;
+  margin: 5px 20px;
+  padding: 12px 25px;
+  justify-content: center;
+  justify-items: start;
+  border-radius: 25px;
+  font-size: 18px;
+  background: linear-gradient(to bottom, #ff000075 0%, #0111ff95 100%);
+  color: #dfdfdff3;
+  position: relative;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 6px 16px;
+  text-decoration: none;
+}
+.nav-links li a:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: #00a2fffd;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+.nav-links li a:hover:before{
+  width: 100%;
+    color: #e8d7d7aa;
+}
+.nav-links li.center a:before{
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-links li.upward a:before{
+  width: 100%;
+  bottom: -5px;
+  opacity: 0;
+}
+.nav-links li.upward a:hover:before{
+  bottom: 0px;
+  opacity: 1;
+}
+.nav-links li.forward a:before{
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s ease;
+}
+.nav-links li.forward a:hover:before{
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {display: flex;
+    margin-top: 10px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: fit-content;
+  height: fit-content;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #d8c9c985;
+  position: relative;
+  flex-wrap: wrap;
+  flex-basis: content;
+}
+
+.image {
+  pointer-events: none;
+  
+  margin-left: 10px;
+  max-width: 600px;
+  width: fit-content;
+  height: fit-content;
+  object-fit: contain;
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+h3 {
+  display: inline;
+  color: #fff;
+  text-decoration: none;
+  margin: 0px 20px;
+  padding: 8px 25px;
+  border-radius: 25px;
+  font-size: 18px;
+}
+
+
+
+
+/* Loader Styles */
+.loader {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader{
+  padding: inherit;
+  padding: 100px;
+  max-width: 600px;
+  width: fit-content;
+  height: fit-content;
+  object-fit: contain;
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+.loader span {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  text-justify:center;
+  text-decoration: none;
+  color: #ffffff;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  margin-top: 100px;
+  background: #007db6;
+  border-radius: 50%;
+  animation: loading 1s infinite alternate;
+}
+
+/* Loader animation */
+.loader span:nth-of-type(2) {
+  background: #008fb2;
+  animation-delay: 0.2s;
+}
+
+.loader span:nth-of-type(3) {
+  background: #009b9e;
+  animation-delay: 0.4s;
+}
+
+.loader span:nth-of-type(4) {
+  background: #00a77d;
+  animation-delay: 0.6s;
+}
+
+.loader span:nth-of-type(5) {
+  background: #00b247;
+  animation-delay: 0.8s;
+}
+
+.loader span:nth-of-type(6) {
+  background: #5ab027;
+  animation-delay: 1s;
+}
+
+.loader span:nth-of-type(7) {
+  background: #a0b61e;
+  animation-delay: 1.2s;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Styles */
+
+/* Smartwatches */
+@media (max-width: 320px) {
+  .card {
+    padding: 10px;
+    max-width: 100px;
+  }
+
+  .image {
+    max-width: 100px;
+  }
+}
+
+/* Smaller devices */
+@media (max-width: 420px) {
+  .card {
+    padding: 12px;
+    max-width: 150px;
+  }
+
+  .image {
+    max-width: 150px;
+  }
+
+  
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .card {
+    padding: 16px;
+    max-width: 200px;
+  }
+
+  .image {
+    max-width: 200px;
+  }
+
+}
+
+/* Tablets and Large Phones */
+@media (min-width: 600px) {
+  .card {
+    padding: 20px;
+    max-width: 250px;
+  }
+
+  .image {
+    max-width: 250px;
+  }
+
+
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+  .card {
+    padding: 20px;
+    max-width: 300px;
+  }
+
+  .image {
+    max-width: 300px;
+  }
+
+  
+}
+
+/* Laptops and Desktops */
+@media (min-width: 992px) {
+  .card {
+    padding: 20px;
+    max-width: 350px;
+  }
+
+  .image {
+    max-width: 350px;
+  }
+
+ 
+}
+
+/* Monitors, Desktops */
+@media (min-width: 1200px) {
+  .card {
+    padding: 20px;
+    max-width:400px;
+  }
+
+  .image {
+    max-width: 400px;
+  }
+
+}
