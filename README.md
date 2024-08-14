@@ -5,4 +5,4 @@
 
 
 # DynamicInterval-on-images
-[demo](https://jamshaidkhan065.github.io/DynamicInterval-on-images/index.html)
+[demo link to site](https://jamshaidkhan065.github.io/DynamicInterval-on-images/index.html)
